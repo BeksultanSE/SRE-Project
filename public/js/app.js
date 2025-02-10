@@ -28,9 +28,10 @@ const checkAuth = async () => {
         });
         console.log(response);
         if (response.ok) {
-                        
+            
         } else {
-            alert("You are not authorized for this app.");
+            showToast("You are not authorized for this app.", "danger");
+            //alert("You are not authorized for this app.");
             window.location.href = '/login';
         }
     } catch (error) {
