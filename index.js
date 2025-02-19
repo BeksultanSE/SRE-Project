@@ -40,6 +40,10 @@ app.use((req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server running on ${API_URL}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Server running on ${API_URL}`);
+  });
+}
+
+module.exports = app;
